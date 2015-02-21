@@ -8,15 +8,18 @@
 
   collections = require('collections/serverside');
 
-  exports.plugin = backbone.Model.extend4000({
+  exports.lego = backbone.Model.extend4000({
     requires: 'logger',
     init: function(callback) {
-      this.env.db = new mongodb.Db(env.settings.db.name, new mongodb.Server(this.settings.host, this.settings.port), {
+      this.env.db = new mongodb.Db(this.settings.name, new mongodb.Server(this.settings.host || 'localhost', this.settings.port || 27017), {
         safe: true
       });
-      return this.env.db.open(function() {
-        return callback(void 0, 'mongodb://' + this.env.db.serverConfig.host + ":" + this.env.db.serverConfig.port);
-      });
+      return this.env.db.open((function(_this) {
+        return function() {
+          _this.env.log('init db', {}, 'init', 'ok');
+          return callback(void 0, 'mongodb://' + _this.env.db.serverConfig.host + ":" + _this.env.db.serverConfig.port);
+        };
+      })(this));
     }
   });
 
