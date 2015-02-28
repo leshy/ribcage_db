@@ -16,8 +16,10 @@
       });
       return this.env.db.open((function(_this) {
         return function() {
-          _this.env.log('init db', {}, 'init', 'ok');
-          return callback(void 0, 'mongodb://' + _this.env.db.serverConfig.host + ":" + _this.env.db.serverConfig.port);
+          var data;
+          data = 'mongodb://' + _this.env.db.serverConfig.host + ":" + _this.env.db.serverConfig.port;
+          _this.env.log("init db (" + data + ")", {}, 'init', 'ok');
+          return callback(void 0, data);
         };
       })(this));
     }

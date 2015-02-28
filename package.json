@@ -1,7 +1,7 @@
 {
   "name": "ribcage_db",
   "version": "1.0.0",
-  "description": "",
+  "description": "mongodb plugin for ribcage",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,7 @@
     "url": "https://github.com/leshy/ribcage_db.git"
   },
   "dependencies": {
-    "mongodb": "^1.4.31"        
+    "mongodb": "^1.4.31"
   },
   "author": "lesh",
   "license": "ISC",
