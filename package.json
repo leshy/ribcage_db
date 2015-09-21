@@ -11,6 +11,8 @@
     "url": "https://github.com/leshy/ribcage_db.git"
   },
   "dependencies": {
+    "backbone4000": "git://github.com/leshy/backbone4000.git",
+    "colors": "^1.1.2",
     "mongodb": "^1.4.31"
   },
   "author": "lesh",
@@ -20,4 +22,3 @@
   },
   "homepage": "https://github.com/leshy/ribcage_db"
 }
-
